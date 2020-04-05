@@ -1,0 +1,55 @@
+- name: dump all
+  hosts: all
+ 
+  tasks:
+    - name: Print some debug information 
+      vars: 
+        msg: |
+          Module Variables ("vars"):
+          --------------------------------
+          {{ vars | to_nice_json }} 
+          
+          Environment Variables ("environment"):
+          --------------------------------
+          {{ environment | to_nice_json }} 
+          
+          GROUP NAMES Variables ("group_names"):
+          --------------------------------
+          {{ group_names | to_nice_json }}
+          
+          GROUPS Variables ("groups"):
+          --------------------------------
+          {{ groups | to_nice_json }}
+          
+          HOST Variables ("hostvars"):
+          --------------------------------
+          {{ hostvars | to_nice_json }} 
+    
+ 
+      debug: 
+        msg: "{{ msg.split('\n') }}"       
+      tags: debug_info
+
+    - 
+      debug: 
+        msg: "============================="
+      tags: debug_info
+ 
+    - name: visualizza ansible_ssh_pass
+      debug:
+        var: 'ansible_ssh_pass'  
+      tags: debug_info
+
+    - 
+      debug: 
+        msg: "============================="
+      tags: debug_info
+
+    - name: visualizza ansible hostname
+      debug:
+        var: 'ansible_hostname'
+      tags: debug_info
+      when: ansible_hostname == "ansible-target1"
+
+
+    
