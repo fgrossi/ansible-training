@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 - 
   name: check connectivity to target server
   hosts: all
@@ -5,3 +6,13 @@
     - name: ping test
       ping:
     
+=======
+-
+  name: Check connectivity to target server
+  hosts: all
+  
+  tasks:
+    -
+      name: Ping test
+      ping: 
+>>>>>>> 0a9fb36e006588d7415b7c352a32caa169cb30a4
