@@ -1,7 +1,2 @@
-<<<<<<< HEAD
 target1 ansible_host=ansible-target1 ansible_ssh_pass=root ansible_ssh_user=root
 target2 ansible_host=ansible-target2 ansible_ssh_pass=root ansible_ssh_user=root
-=======
-target1 ansible_host=ansible-target1 ansible_ssh_pass=osboxes.org
-target2 ansible_host=ansible-target2 ansible_ssh_pass=osboxes.org
->>>>>>> 0a9fb36e006588d7415b7c352a32caa169cb30a4
