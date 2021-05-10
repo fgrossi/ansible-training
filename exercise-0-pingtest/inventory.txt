@@ -1,0 +1,2 @@
+target1 ansible_host=ansible-target1 ansible_ssh_pass=root ansible_ssh_user=root
+target2 ansible_host=ansible-target2 ansible_ssh_pass=root ansible_ssh_user=root

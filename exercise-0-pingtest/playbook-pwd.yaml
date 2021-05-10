@@ -1,0 +1,15 @@
+- 
+  name: check connectivity to target server
+  hosts: all
+  tasks:
+    - name: Clear Cache and Restart tomcat
+      become: yes
+      delay: 10
+      async: 10
+      poll: 60
+      shell:
+        echo -e "\n Present working directory is" `pwd`
+      args:
+        #chdir: "/apps/tomcat/"
+      register: fileout
+      tags: fileout 
