@@ -1,0 +1,8 @@
+-
+  name: rmove file from target servers
+  hosts: all
+  tasks:
+    - name: Remove file (remove /tmp/fileA.txt)
+      ansible.builtin.file:
+        path: /tmp/file1.txt
+        state: absent

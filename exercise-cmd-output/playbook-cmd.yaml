@@ -1,0 +1,31 @@
+- 
+  name: shell module - it starts with all ENV preset
+  hosts: all
+  tasks:
+    - name: shell module - it starts with all ENV preset
+      shell:
+#        echo "\n Present working directory is" `pwd` 
+#        bash -c 'ls -al && echo -e "\n ciao" '
+        cat /etc/hosts 
+      args:
+#        chdir: "/apps/tomcat/"
+      register: out
+    
+    - debug: var=out.stdout_lines
+
+-  
+  name: script module - it sends a script over targets and execute it
+  hosts: all
+  tasks:
+    - name: script module - it sends a script over targets and execute it
+      script: /home/osboxes/scripts/test.sh
+      register: out
+    - debug: var=out.stdout_lines
+-  
+  name: command module - execute command without ENV preset (does not have $HOME nor processes > | pipes characters)
+  hosts: all
+  tasks:
+    - name:  command module - execute command without ENV preset (does not have $HOME nor processes > | pipes characters)
+      command: bash -c 'pwd'
+      register: out
+    - debug: var=out.stdout_lines
