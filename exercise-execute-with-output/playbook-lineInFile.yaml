@@ -2,6 +2,10 @@
   name: lineInFile
   hosts: all
   tasks:
+  #  - name: touch del file /tmp/test.tst
+  #    copy:
+  #      content: "your config line here"
+  #      dest: "/tmp/test.txt"
     - name: line in file
-      service: name=lineinfile path=/tmp/test.txt line="caro amico ti scrivo"
+      lineinfile: path=/tmp/test.txt line='caro amico ti scrivo'
 
