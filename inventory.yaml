@@ -1,0 +1,16 @@
+all:
+  hosts:
+    ansible-target1:
+      ansible_ssh_user: root
+      ansible_ssh_pass: root
+    ansible-target2:
+      ansible_ssh_user: root
+      ansible_ssh_pass: root
+
+  children:
+    webservers:
+      hosts:
+        ansible-target1:
+    dbservers:
+      hosts:
+        ansible-target2:

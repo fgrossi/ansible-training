@@ -1,0 +1,7 @@
+- 
+  name: lineInFile
+  hosts: all
+  tasks:
+    - name: line in file
+      service: name=lineinfile path=/tmp/test.txt line="caro amico ti scrivo"
+

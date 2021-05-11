@@ -26,6 +26,6 @@
   hosts: all
   tasks:
     - name:  command module - execute command without ENV preset (does not have $HOME nor processes > | pipes characters)
-      command: bash -c "pwd"
+      command: bash -c "pwd" 
       register: out
     - debug: var=out.stdout_lines

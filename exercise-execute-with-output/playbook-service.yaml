@@ -1,0 +1,13 @@
+- 
+  name:   check webservers up
+  hosts: webservers
+  tasks:
+    - name: check webservers up
+      service: name=tomcat state=stopped
+- 
+  name:   check dbservers up
+  hosts: dbservers
+  tasks:
+    - name: check dbservers up
+      service: name=postgresql state=stopped
+
